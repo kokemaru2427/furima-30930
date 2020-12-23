@@ -2,18 +2,16 @@
 
 ## users テーブル
 
-| Column          | Type        | Options     |
-|:---------------:|:-----------:|:-----------:|
-| nickname        | string      | null: false |
-| email           | string      | null: false |
-| password        | string      | null: false |
-| fmily_name      | string      | null: false |
-| last_name       | string      | null: false |
-| j_fmily_name    | string      | null: false |
-| j_last_name     | string      | null: false |
-| birthday_year   | date_select | null: false |
-| birthday_month  | date_select | null: false |
-| birthday_day    | date_select | null: false |
+| Column             | Type        | Options     |
+|:------------------:|:-----------:|:-----------:|
+| nickname           | string      | null: false |
+| email              | string      | null: false |
+| encrypted_password | string      | null: false |
+| family_name        | string      | null: false |
+| last_name          | string      | null: false |
+| j_family_name      | string      | null: false |
+| j_last_name        | string      | null: false |
+| birthday_day       | date_select | null: false |
 
 ### Association
 
@@ -24,7 +22,6 @@
 
 | Column           | Type        | Options     |
 |:----------------:|:-----------:|:-----------:|
-| image            | string      | null: false |
 | name             | string      | null: false |
 | explanation      | text        | null: false |
 | category         | string      | null: false |
@@ -45,24 +42,24 @@
 |:--------------:|:----------:|:-----------:|
 | user_id        | references | null: false |
 | item_id        | references | ----------- |
-| purchase_state | boolean    | ----------- |
 
 ### Association
 
 - belongs_to :user
 - belongs_to :item
-- belongs_to :address
+- has_one :address
 
-## address テーブル
+## addresses テーブル
 
 | Column         | Type       | Options     |
 |:--------------:|:----------:|:-----------:|
-| postal_code    | integer    | null: false |
+| postal_code    | string     | null: false |
 | prefectures    | integer    | null: false |
 | municipalities | string     | null: false |
 | address        | string     | null: false |
 | building       | string     | ----------- |
-| phone_number   | integer    | null: false |
+| phone_number   | string     | null: false |
+| purchase_id    | references | ----------- |
 
 ### Association
 
