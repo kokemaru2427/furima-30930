@@ -38,10 +38,10 @@
 
 ## purchases テーブル
 
-| Column         | Type       | Options     |
-|:--------------:|:----------:|:-----------:|
-| user           | references | null: false |
-| item           | references | ----------- |
+| Column         | Type       | Options           |
+|:--------------:|:----------:|:-----------------:|
+| user           | references | foreign_key: true |
+| item           | references | foreign_key: true |
 
 ### Association
 
@@ -51,15 +51,15 @@
 
 ## addresses テーブル
 
-| Column         | Type       | Options     |
-|:--------------:|:----------:|:-----------:|
-| postal_code    | string     | null: false |
-| prefecture_id  | integer    | null: false |
-| municipalities | string     | null: false |
-| residence      | string     | null: false |
-| building       | string     | ----------- |
-| phone_number   | string     | null: false |
-| purchase       | references | ----------- |
+| Column         | Type       | Options           |
+|:--------------:|:----------:|:-----------------:|
+| postal_code    | string     | null: false       |
+| prefecture_id  | integer    | null: false       |
+| municipalities | string     | null: false       |
+| residence      | string     | null: false       |
+| building       | string     | -----------       |
+| phone_number   | string     | null: false       |
+| purchase       | references | foreign_key: true |
 
 ### Association
 
