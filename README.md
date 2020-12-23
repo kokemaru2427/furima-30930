@@ -24,7 +24,7 @@
 |:-------------------:|:-----------:|:-----------:|
 | name                | string      | null: false |
 | explanation         | text        | null: false |
-| category_id         | integer      | null: false |
+| category_id         | integer     | null: false |
 | state_id            | integer     | null: false |
 | shipping_charge_id  | integer     | null: false |
 | shipping_area_id    | integer     | null: false |
@@ -54,7 +54,7 @@
 | Column         | Type       | Options     |
 |:--------------:|:----------:|:-----------:|
 | postal_code    | string     | null: false |
-| prefectures_id | integer    | null: false |
+| prefecture_id  | integer    | null: false |
 | municipalities | string     | null: false |
 | residence      | string     | null: false |
 | building       | string     | ----------- |
