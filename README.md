@@ -5,13 +5,13 @@
 | Column             | Type        | Options     |
 |:------------------:|:-----------:|:-----------:|
 | nickname           | string      | null: false |
-| email              | string      | null: false |
+| email              | string      | null: false , unique: true |
 | encrypted_password | string      | null: false |
 | family_name        | string      | null: false |
 | last_name          | string      | null: false |
 | j_family_name      | string      | null: false |
 | j_last_name        | string      | null: false |
-| birthday_day       | date_select | null: false |
+| birthday           | date        | null: false |
 
 ### Association
 
@@ -20,21 +20,21 @@
 
 ## items テーブル
 
-| Column           | Type        | Options     |
-|:----------------:|:-----------:|:-----------:|
-| name             | string      | null: false |
-| explanation      | text        | null: false |
-| category         | string      | null: false |
-| state            | string      | null: false |
-| shipping_charges | string      | null: false |
-| shipping_area    | string      | null: false |
-| shipping_date    | string      | null: false |
-| price            | integer     | null: false |
+| Column              | Type        | Options     |
+|:-------------------:|:-----------:|:-----------:|
+| name                | string      | null: false |
+| explanation         | text        | null: false |
+| category            | string      | null: false |
+| state               | string      | null: false |
+| shipping_charges_id | integer     | null: false |
+| shipping_area_id    | integer     | null: false |
+| shipping_date_id    | integer     | null: false |
+| price               | integer     | null: false |
 
 ### Association
 
 - belongs_to :user
-- has_many :purchases
+- has_one :purchases
 
 ## purchases テーブル
 
