@@ -30,6 +30,7 @@
 | prefecture_id       | integer     | null: false |
 | shipping_date_id    | integer     | null: false |
 | price               | integer     | null: false |
+| user_id             | integer     | null: false |
 
 ### Association
 
