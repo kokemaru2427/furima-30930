@@ -8,10 +8,8 @@ class User < ApplicationRecord
   validates :password,:password_confirmation,format:{with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
   validates :password, confirmation: true
   validates :nickname, presence: true
-  validates :family_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥]+\z/ }
-  validates :last_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥]+\z/ }
-  validates :j_family_name, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
-  validates :j_last_name, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
+  validates :family_name, :last_name, presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥]+\z/ }
+  validates :j_family_name, :j_last_name, presence: true, format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :birthday, presence: true
 
   has_many :items
