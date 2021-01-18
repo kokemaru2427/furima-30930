@@ -52,7 +52,7 @@ RSpec.describe User, type: :model do
       it "passwordが前角では登録できない" do
         @user.password = "ああああああ"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password", "Password is invalid")
+        expect(@user.errors.full_messages).to include("Password can't be blank")
       end
       it "passwordが存在してもpassword_confirmationが空では登録できない" do
         @user.password_confirmation = ""
