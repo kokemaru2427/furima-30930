@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :item do
-    image                   { }
     name                    {Faker::Name.initials(number: 2)}
     explanation             {Faker::Name.initials(number: 2)}
     category_id             { 2 }
@@ -10,6 +9,7 @@ FactoryBot.define do
     shipping_date_id        { 2 }
     price                   { 1000 }
     
+    association :user
 
     
     

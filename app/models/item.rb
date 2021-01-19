@@ -16,11 +16,14 @@ class Item < ApplicationRecord
   validates :name
   validates :explanation
   end
-  validates :category_id, numericality: { other_than: 1 }
-  validates :prefecture_id, numericality: { other_than: 1 }
-  validates :shipping_charge_id, numericality: { other_than: 1 }
-  validates :shipping_date_id, numericality: { other_than: 1 }
-  validates :state_id, numericality: { other_than: 1 }
 
+  with_options numericality: { other_than: 1 } do
+  validates :category_id
+  validates :prefecture_id
+  validates :shipping_charge_id
+  validates :shipping_date_id
+  validates :state_id
+  end
+  
   validates :price, numericality: { only_integer: true, greater_than: 300, less_than: 9999999 }
 end
