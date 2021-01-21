@@ -1,6 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
-  before_action :set_item, only: [:edit, :show, :move_to_index_item]
+  before_action :set_item, only: [:edit, :show, :update, :move_to_index_item]
   before_action :move_to_index_item, only: :edit
   
   
@@ -28,11 +27,9 @@ class ItemsController < ApplicationController
   def edit
   end
 
-  def update
-    @item = Item.find(params[:id])
-    @item.update(product_params)
-    if @item.valid? 
-      redirect_to item_path(item.id)
+  def update  
+    if @item.update(product_params)
+      redirect_to item_path(@item.id)
     else
       render :edit
     end
