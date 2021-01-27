@@ -8,7 +8,5 @@ FactoryBot.define do
     building {"神戸ハイツ"}
     phone_number {"00000000000"}
 
-    association :user
-    association :item
   end
 end
