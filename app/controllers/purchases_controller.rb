@@ -1,7 +1,7 @@
 class PurchasesController < ApplicationController
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :set_item, only: [:new, :create]
-  before_action :move_to_index_purchase, only: [:new, :create,]
+  before_action :move_to_index_purchase, only: [:new, :create]
 
   def new
     @purchase_address = PurchaseAddress.new
@@ -22,7 +22,7 @@ class PurchasesController < ApplicationController
   private
 
   def move_to_index_purchase
-    if current_user.id == @item.user_id or @item.purchase.present?
+    if current_user.id == @item.user_id || @item.purchase.present?
         redirect_to root_path
     end
   end
